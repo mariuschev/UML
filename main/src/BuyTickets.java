@@ -10,7 +10,7 @@ public class BuyTickets extends JPanel {
         this.frame = frame;
         setLayout(new BorderLayout());
 
-        JButton previousPageButton = new JButton("Page précédente");
+        JButton previousPageButton = new JButton("Previous page");
         previousPageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

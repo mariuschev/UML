@@ -8,7 +8,7 @@ public class main {
             JFrame frame = new JFrame("Application Multi-Page");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(600, 400);
-            frame.add(new LanguageSelectionPage(frame)); // Commencez par afficher la Page1
+            frame.add(new Page1(frame)); // Commencez par afficher la Page1
             frame.setVisible(true);
         });
     }
