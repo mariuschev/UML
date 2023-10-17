@@ -13,6 +13,8 @@ public class Page1 extends JPanel {
         // Ajoutez un libellé pour le titre
         JLabel titleLabel = new JLabel("Ticket Vending Machine", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        //ajouter un libéllé pour la langue selectionné dans la page LanguageSelectionPage qui s'adaptera en fonction de la langue choisie
+        JLabel languageLabel = new JLabel("Langue sélectionnée : Français", SwingConstants.CENTER);
 
         // Ajoutez des boutons pour les différentes options de vente de billets
         JButton buyTicketButton = new JButton("Acheter un ticket, coupons");
