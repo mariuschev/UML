@@ -19,7 +19,7 @@ public class Page1 extends JPanel {
         JButton viewScheduleButton = new JButton("Reload your card");
         JButton helpButton = new JButton("Help");
 
-        buyTicketButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        buyTicketButton.setFont(new Font("Arial", Font.PLAIN, 35));
         //je veux que lorsque l'on clique sur le bouton "Acheter un ticket, coupons" on arrive sur la page BuyTickets
         buyTicketButton.addActionListener(new ActionListener() {
             @Override
@@ -30,8 +30,8 @@ public class Page1 extends JPanel {
                 frame.repaint();
             }
         });
-        viewScheduleButton.setFont(new Font("Arial", Font.PLAIN, 18));
-        helpButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        viewScheduleButton.setFont(new Font("Arial", Font.PLAIN, 35));
+        helpButton.setFont(new Font("Arial", Font.PLAIN, 35));
 
         buyTicketButton.addActionListener(new ActionListener() {
             @Override
