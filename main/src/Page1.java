@@ -33,24 +33,24 @@ public class Page1 extends JPanel {
         viewScheduleButton.setFont(new Font("Arial", Font.PLAIN, 35));
         helpButton.setFont(new Font("Arial", Font.PLAIN, 35));
 
-        buyTicketButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Code pour gérer l'achat de billets
-            }
-        });
 
         viewScheduleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Code pour afficher l'horaire
+                frame.getContentPane().removeAll();
+                frame.add(new NavigoPage(frame)); // Naviguer vers la page de recharge
+                frame.revalidate();
+                frame.repaint();
             }
         });
 
         helpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Code pour afficher l'aide
+                frame.getContentPane().removeAll();
+                frame.add(new Help1(frame)); // Naviguer vers Help1
+                frame.revalidate();
+                frame.repaint();
             }
         });
 
