@@ -12,40 +12,33 @@ public class PaymentPage extends JPanel {
         this.selectedZone = selectedZone;
         setLayout(new BorderLayout());
 
-        // Affichez les détails de la zone et du prix sélectionnés
-        JLabel detailsLabel = new JLabel("Zone sélectionnée : " + selectedZone, SwingConstants.CENTER);
-        add(detailsLabel, BorderLayout.NORTH);
+        JLabel detailsLabel = new JLabel("Selected Zone : " + selectedZone, SwingConstants.CENTER);
         detailsLabel.setFont(new Font("Arial", Font.PLAIN, 75));
+        detailsLabel.setPreferredSize(new Dimension(900, 400));
+        add(detailsLabel, BorderLayout.NORTH);
 
-        // Panel pour les boutons de paiement
         JPanel paymentButtonsPanel = new JPanel();
         paymentButtonsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        paymentButtonsPanel.setFont(new Font("Arial", Font.PLAIN, 100));
+        paymentButtonsPanel.setPreferredSize(new Dimension(600, 400));
 
-        // Créez des boutons pour les options de paiement
-        JButton carteButton = new JButton("Payer par Carte");
-        carteButton.setPreferredSize(new Dimension(900, 400));
+        JButton carteButton = new JButton("Pay by card");
+        carteButton.setPreferredSize(new Dimension(400, 150));
         carteButton.setFont(new Font("Arial", Font.PLAIN, 45));
-        JButton monnaieButton = new JButton("Payer en Monnaie");
+        JButton monnaieButton = new JButton("Pay by cash");
+        monnaieButton.setPreferredSize(new Dimension(400, 150));
         monnaieButton.setFont(new Font("Arial", Font.PLAIN, 45));
-        monnaieButton.setPreferredSize(new Dimension(900, 400));
 
-        // Ajoutez des actions aux boutons
         carteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Logique pour le paiement par carte
-                // Ajoutez votre logique de paiement ici
-                System.out.println("Paiement par carte effectué.");
+                showPaymentReceiptPage();
             }
         });
 
         monnaieButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Logique pour le paiement en monnaie
-                // Ajoutez votre logique de paiement ici
-                System.out.println("Paiement en monnaie effectué.");
+                showPaymentReceiptPage();
             }
         });
 
@@ -53,19 +46,25 @@ public class PaymentPage extends JPanel {
         paymentButtonsPanel.add(monnaieButton);
         add(paymentButtonsPanel, BorderLayout.CENTER);
 
-        // Bouton de retour à la page précédente
-        JButton previousPageButton = new JButton("Page précédente");
+        JButton previousPageButton = new JButton("Previous page");
         previousPageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll();
-                frame.add(new BuyTickets(frame)); // Naviguer vers la page d'achat
+                frame.add(new BuyTickets(frame));
                 frame.revalidate();
                 frame.repaint();
             }
         });
-        paymentButtonsPanel.setPreferredSize(new Dimension(900, 400)); // Définir la taille personnalisée*
-        detailsLabel.setPreferredSize(new Dimension(900, 400)); // Définir la taille personnalisée
+
+        previousPageButton.setPreferredSize(new Dimension(100, 75));
         add(previousPageButton, BorderLayout.SOUTH);
+    }
+
+    private void showPaymentReceiptPage() {
+        frame.getContentPane().removeAll();
+        frame.add(new PaymentReceiptPage(frame));
+        frame.revalidate();
+        frame.repaint();
     }
 }
